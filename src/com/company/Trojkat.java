@@ -67,4 +67,8 @@ public class Trojkat {
         double d3 = new Odcinek(punkt1, punkt2).getDlugosc();
         this.obwod = d1 + d2 + d3;
     }
+
+    public String toString() {
+        return "Obwód trójkąta = " + obwod + " Pole trójkąta = " + pole +
+    }
 }
