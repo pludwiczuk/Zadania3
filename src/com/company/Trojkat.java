@@ -54,7 +54,6 @@ public class Trojkat {
         double a = new Odcinek(punkt1, punkt2).getDlugosc();
         double b = new Odcinek(punkt2, punkt3).getDlugosc();
         double c = new Odcinek(punkt1, punkt3).getDlugosc();
-        System.out.println(a + " "+ b + " "+ c);
         this.pole = Math.sqrt(p*(p-a)*(p-b)*(p-c));
     }
 

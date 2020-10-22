@@ -5,6 +5,27 @@ public class Odcinek {
     private Punkt punkt2;
     private double dlugosc;
 
+    public static Punkt punktPrzeciecia(Odcinek odcinek1, Odcinek odcinek2) {
+        double x1 = odcinek1.getPuntk1().getX();
+        double y1 = odcinek1.getPuntk1().getY();
+        double x2 = odcinek1.getPunkt2().getX();
+        double y2 = odcinek1.getPunkt2().getY();
+        double x3 = odcinek2.getPuntk1().getX();
+        double y3 = odcinek2.getPuntk1().getY();
+        double x4 = odcinek2.getPunkt2().getX();
+        double y4 = odcinek2.getPunkt2().getY();
+
+        double a1 = (y2-y1)/(x2-x1);
+        double b1 = y1-a1*x1;
+        double a2 = (y4-y3)/(x4-x3);
+        double b2 = y3-a2*x3;
+
+        double x = (b2-b1)/(a1-a2);
+        double y = a1*x+b1;
+
+        return new Punkt(x ,y);
+    }
+
     public Odcinek(Punkt punkt1, Punkt punkt2) {
         this.punkt1 = punkt1;
         this.punkt2 = punkt2;

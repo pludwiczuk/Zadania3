@@ -11,5 +11,9 @@ public class Main {
 
         Trojkat trojkat = new Trojkat(p1,p2,p3);
         System.out.println(trojkat);
+
+        Odcinek o1 = new Odcinek(new Punkt(0,0), new Punkt(2,8));
+        Odcinek o2 = new Odcinek(new Punkt(-3,5), new Punkt(5,3));
+        System.out.println(Odcinek.punktPrzeciecia(o1,o2));
     }
 }
