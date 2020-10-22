@@ -1,19 +1,37 @@
 package com.company;
 
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
-        Punkt p1 = new Punkt(2,5);
-        Punkt p2 = new Punkt(5,9);
-        Punkt p3 = new Punkt(15, 12);
-        Odcinek o = new Odcinek(p1,p2);
-        System.out.println(o);
+        Scanner czyt = new Scanner(System.in);
+
+        System.out.println("Podaj współrzędne 3 punktów\nP1:");
+        double x1 = czyt.nextDouble();
+        double y1 = czyt.nextDouble();
+
+        System.out.println("P2:");
+        double x2 = czyt.nextDouble();
+        double y2 = czyt.nextDouble();
+
+        System.out.println("P3:");
+        double x3 = czyt.nextDouble();
+        double y3 = czyt.nextDouble();
+
+        Punkt p1 = new Punkt(x1,y1);
+        Punkt p2 = new Punkt(x2,y2);
+        Punkt p3 = new Punkt(x3, y3);
 
         Trojkat trojkat = new Trojkat(p1,p2,p3);
         System.out.println(trojkat);
 
-        Odcinek o1 = new Odcinek(new Punkt(0,0), new Punkt(2,8));
-        Odcinek o2 = new Odcinek(new Punkt(-3,5), new Punkt(5,3));
-        System.out.println(Odcinek.punktPrzeciecia(o1,o2));
+        trojkat.setPunkt2(new Punkt(5,12));
+        System.out.println(trojkat);
+
+        System.out.println("Podaj 4 punkty:");
+        Odcinek o1 = new Odcinek(new Punkt(czyt.nextDouble(),czyt.nextDouble()), new Punkt(czyt.nextDouble(),czyt.nextDouble()));
+        Odcinek o2 = new Odcinek(new Punkt(czyt.nextDouble(),czyt.nextDouble()), new Punkt(czyt.nextDouble(),czyt.nextDouble()));
+        System.out.println("Punkt przecięcia podanych odcinków wynosi: " + Odcinek.punktPrzeciecia(o1,o2));
     }
 }
