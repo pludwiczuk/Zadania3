@@ -53,7 +53,8 @@ public class Trojkat {
         double p = 0.5*obwod;
         double a = new Odcinek(punkt1, punkt2).getDlugosc();
         double b = new Odcinek(punkt2, punkt3).getDlugosc();
-        double c = new Odcinek(punkt1, punkt2).getDlugosc();
+        double c = new Odcinek(punkt1, punkt3).getDlugosc();
+        System.out.println(a + " "+ b + " "+ c);
         this.pole = Math.sqrt(p*(p-a)*(p-b)*(p-c));
     }
 
@@ -64,11 +65,11 @@ public class Trojkat {
     private void setObwod() {
         double d1 = new Odcinek(punkt1, punkt2).getDlugosc();
         double d2 = new Odcinek(punkt2, punkt3).getDlugosc();
-        double d3 = new Odcinek(punkt1, punkt2).getDlugosc();
+        double d3 = new Odcinek(punkt1, punkt3).getDlugosc();
         this.obwod = d1 + d2 + d3;
     }
 
     public String toString() {
-        return "Obwód trójkąta = " + obwod + " Pole trójkąta = " + pole +
+        return "Obwód trójkąta = " + obwod + " Pole trójkąta = " + pole + " " + new Odcinek(punkt1, punkt2) + ", " + new Odcinek(punkt2, punkt3) + ", " + new Odcinek(punkt1, punkt3);
     }
 }
